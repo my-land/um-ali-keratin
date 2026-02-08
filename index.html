@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أم علي كيراتين | Um Ali Keratin</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Baloo+Bhaijaan+2:wght@400..800&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --m3-navy: #0A192F;
+            --m3-orange: #FF6D00;
+            --m3-surface: #FAF9F6;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', 'Baloo Bhaijaan 2', sans-serif;
+            background-color: var(--m3-surface);
+            color: var(--m3-navy);
+            scroll-behavior: smooth;
+        }
+        .m3-card {
+            background-color: white;
+            border-radius: 28px;
+            border: 1px solid rgba(10, 25, 47, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .m3-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(10, 25, 47, 0.04);
+            border-color: rgba(255, 109, 0, 0.2);
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            right: 0;
+            width: 40px;
+            height: 4px;
+            background-color: var(--m3-orange);
+            border-radius: 2px;
+        }
+        .hidden { display: none !important; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: #E2E7F0; border-radius: 10px; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .reveal { animation: fadeIn 0.8s ease forwards; }
+    </style>
+</head>
+<body class="selection:bg-orange-100">
+
+    <!-- Expiration Overlay -->
+    <div id="expiration-overlay" class="fixed inset-0 hidden flex flex-col items-center justify-center p-8 text-center bg-white z-[9999]">
+        <div class="p-10 rounded-[40px] border border-gray-100 flex flex-col items-center max-w-sm shadow-2xl bg-[#FAF9F6]">
+            <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 bg-orange-50 text-orange-600">
+                <i data-lucide="shield-alert" size="48"></i>
+            </div>
+            <h2 class="text-2xl font-black text-gray-900 mb-4" id="txt-expired-title">انتهى اشتراك الصفحة</h2>
+            <p class="text-gray-500 mb-8 leading-relaxed text-sm">عذراً، انتهت صلاحية هذه الصفحة. يرجى التواصل مع الدعم لتجديد الخدمة.</p>
+            <a id="whatsapp-renewal-link" href="#" class="w-full py-4 bg-black text-white rounded-2xl font-black active:scale-95 transition-all">تجديد الاشتراك عبر LanLink</a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-black rounded-lg flex items-center justify-center text-white">
+                    <i data-lucide="scissors" size="18"></i>
+                </div>
+                <span class="font-black text-lg hidden sm:block" id="nav-brand">أم علي كيراتين</span>
+            </div>
+            <div class="flex gap-1 bg-gray-100 p-1 rounded-full border border-gray-200">
+                <button onclick="setLanguage('ar')" id="btn-ar" class="px-4 py-1.5 rounded-full text-xs font-bold transition-all bg-black text-white">العربية</button>
+                <button onclick="setLanguage('ku')" id="btn-ku" class="px-4 py-1.5 rounded-full text-xs font-bold transition-all text-gray-500">کوردی</button>
+                <button onclick="setLanguage('en')" id="btn-en" class="px-4 py-1.5 rounded-full text-xs font-bold transition-all text-gray-500">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-[10px] font-black uppercase tracking-widest mb-6">
+                <i data-lucide="sparkles" size="12"></i>
+                <span id="txt-badge">Expert Hair Care</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-none mb-6 text-slate-900" id="txt-name">أم علي كيراتين 🏹</h1>
+            <p class="text-xl text-slate-500 font-medium mb-10 max-w-lg leading-relaxed" id="txt-expertise">اختصاص تسريح ومعالجة الشعر بأحدث التقنيات العالمية في البصرة.</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="https://wa.me/9647714904435" class="px-8 py-4 bg-black text-white rounded-2xl font-black text-center shadow-xl shadow-slate-200 hover:scale-105 transition-transform flex items-center justify-center gap-2">
+                    <i data-lucide="phone" size="20"></i>
+                    <span id="btn-wa">احجز موعدك الآن</span>
+                </a>
+                <div class="flex items-center gap-4 px-6 py-4 bg-white border border-slate-100 rounded-2xl">
+                    <div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400">
+                        <i data-lucide="map-pin" size="20"></i>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest" id="txt-location-label">Location</span>
+                        <span class="font-bold text-sm" id="txt-location">المدينة الرياضية، البصرة</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relative reveal" style="animation-delay: 0.2s">
+            <div class="absolute inset-0 bg-orange-500/10 rounded-[60px] -rotate-6 scale-95"></div>
+            <div class="relative aspect-square bg-slate-200 rounded-[60px] overflow-hidden border-8 border-white shadow-2xl">
+                 <img src="https://scontent-hel3-1.xx.fbcdn.net/v/t1.6435-9/41866283_315682869239497_7947714798018363392_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=ZUORCsYTiwsQ7kNvwGgPW-L&_nc_oc=Adm1NnkS2dtKuvLDWTHSDFgEtb_zd3WLYMEWF7M0OIDEgmhzMmtjlNV-vSQNHo86U1g&_nc_zt=23&_nc_ht=scontent-hel3-1.xx&_nc_gid=HCzsyKTq2n8OwxoGt2udqA&oh=00_AftaDxpMweFUrGm_0l-hx4GzkvcTqjjVPAGgoby11Ml9Vw&oe=69AFDBEE" 
+                      alt="Um Ali Keratin Hero" 
+                      class="w-full h-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="bg-white py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title mb-12" id="txt-services-title">خدماتنا المميزة</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="m3-card p-8 space-y-4">
+                    <div class="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center text-orange-600">
+                        <i data-lucide="zap" size="28"></i>
+                    </div>
+                    <h3 class="text-xl font-black" id="svc-1-t">تسريح الكيراتين</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed" id="svc-1-d">معالجة الشعر الخشن والمجعد بأفضل أنواع الكيراتين العالمية لنتائج تدوم طويلاً.</p>
+                </div>
+                <div class="m3-card p-8 space-y-4">
+                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600">
+                        <i data-lucide="droplet" size="28"></i>
+                    </div>
+                    <h3 class="text-xl font-black" id="svc-2-t">بوتوكس الشعر</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed" id="svc-2-d">ترميم الشعر التالف والمتقصف وإعادة الحيوية واللمعان الفوري لخصلات شعرك.</p>
+                </div>
+                <div class="m3-card p-8 space-y-4">
+                    <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600">
+                        <i data-lucide="shield-check" size="28"></i>
+                    </div>
+                    <h3 class="text-xl font-black" id="svc-3-t">بروتين النانو</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed" id="svc-3-d">تقنية النانو الحديثة لتغذية الشعر من الجذور وحتى الأطراف بأمان تام.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio / Work Section -->
+    <section class="max-w-6xl mx-auto px-6 py-20">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div>
+                <h2 class="section-title" id="txt-portfolio-title">نتائجنا المبهرة</h2>
+                <p class="text-slate-400 mt-4 font-medium" id="txt-portfolio-desc">لمحة عن التغيير الجذري الذي نقوم به لعملائنا.</p>
+            </div>
+            <div class="flex gap-4">
+                <a href="https://www.instagram.com/um_ali_kiratin" target="_blank" class="p-4 bg-white border border-slate-100 rounded-2xl text-pink-600 hover:bg-pink-50 transition-colors">
+                    <i data-lucide="instagram" size="24"></i>
+                </a>
+                <a href="https://www.facebook.com/um.ali.keratin/" target="_blank" class="p-4 bg-white border border-slate-100 rounded-2xl text-blue-600 hover:bg-blue-50 transition-colors">
+                    <i data-lucide="facebook" size="24"></i>
+                </a>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- New Portfolio Images -->
+            <div class="aspect-[3/4] bg-slate-100 rounded-[32px] overflow-hidden border-2 border-white shadow-md hover:scale-[1.05] transition-transform">
+                <img src="https://scontent-hel3-1.xx.fbcdn.net/v/t39.30808-6/485372486_1884244972383271_6955241036550610037_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=9gX-UdDRH6YQ7kNvwGajSgI&_nc_oc=Adm9Kv-8ZLmjfNkImCDMmk-rRA4burgrW_SdFsUEqCEaYXmXh6arb-YzMne4awII90A&_nc_zt=23&_nc_ht=scontent-hel3-1.xx&_nc_gid=KZEavvYAaZpzq8AJ5irxoA&oh=00_AfsGybzeB5-5nxknkWY-aSE_7DGc7KN5TRWmat76e0dT6Q&oe=698E27B7" 
+                     class="w-full h-full object-cover" alt="Portfolio 1">
+            </div>
+            <div class="aspect-[3/4] bg-slate-100 rounded-[32px] overflow-hidden border-2 border-white shadow-md hover:scale-[1.05] transition-transform md:translate-y-8">
+                <img src="https://scontent-hel3-1.xx.fbcdn.net/v/t39.30808-6/485695902_1884097909064644_5372408249697946689_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=ME4KqvBc2GsQ7kNvwHYtPjR&_nc_oc=AdnYS-qKT19OiDTbrKnvv8Ew5LnpD_TZ-0Yu7bBKx9QRkR1Ho38QGA8gftB9D89scaY&_nc_zt=23&_nc_ht=scontent-hel3-1.xx&_nc_gid=b3R2vtYsu1R_OVtZwQikXg&oh=00_AfsDqTzV-wEzm1m34zo6XRWjfLEdKEaRGrEYouoOg04KaA&oe=698E4661" 
+                     class="w-full h-full object-cover" alt="Portfolio 2">
+            </div>
+            <div class="aspect-[3/4] bg-slate-100 rounded-[32px] overflow-hidden border-2 border-white shadow-md hover:scale-[1.05] transition-transform">
+                <img src="https://scontent-hel3-1.xx.fbcdn.net/v/t39.30808-6/485389877_1883844185756683_827930707619810954_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=EAE_v7-qGBAQ7kNvwFN6WvY&_nc_oc=AdmVDhZSl_f37SCPsnLPVYhyaGsdACYR-qGr3Yu9iQgyaDnw3d66cYHCX2IxDg89nG8&_nc_zt=23&_nc_ht=scontent-hel3-1.xx&_nc_gid=wvLG90Z8BU_8BYwcwXztIg&oh=00_AfuvFfFK2J1hQZkcPtE4HQHSu0H6R7RjE7IgfQRh6BprqA&oe=698E217F" 
+                     class="w-full h-full object-cover" alt="Portfolio 3">
+            </div>
+            <div class="aspect-[3/4] bg-slate-100 rounded-[32px] overflow-hidden border-2 border-white shadow-md hover:scale-[1.05] transition-transform md:translate-y-8">
+                <img src="https://scontent-hel3-1.xx.fbcdn.net/v/t39.30808-6/485798008_1883834719090963_8543628126033540640_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=eCzdYAilTtUQ7kNvwHnT5TS&_nc_oc=Adk7xyg-5_2kX-EMV_mr0Bbvpst6MRf_qozmqEjNWArOOcs30H6MV2I9ROuSPBRqOgA&_nc_zt=23&_nc_ht=scontent-hel3-1.xx&_nc_gid=njLEPdHC01lJBedXxE6hyA&oh=00_AftMsgyo26H-Ymxbr58WwKTttKIabXHy7_SthEREbls6MA&oe=698E37D6" 
+                     class="w-full h-full object-cover" alt="Portfolio 4">
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Background -->
+    <section class="max-w-6xl mx-auto px-6 py-20 mt-12">
+        <div class="m3-card p-10 bg-slate-900 text-white grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="flex items-center gap-3 mb-6 text-orange-400">
+                    <i data-lucide="graduation-cap" size="32"></i>
+                    <h3 class="font-black uppercase tracking-widest text-sm" id="txt-edu-label">Academic Profile</h3>
+                </div>
+                <h4 class="text-3xl font-black mb-4 leading-tight" id="txt-edu-title">خلفية علمية تضمن الدقة والاحترافية</h4>
+                <p class="text-slate-400 leading-relaxed mb-8" id="txt-edu-desc">إدارة العمل بمهنية عالية نابعة من خلفية أكاديمية في المحاسبة والإدارة من جامعة البصرة.</p>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                        <span id="txt-edu-1" class="font-bold">University of Basrah</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                        <span id="txt-edu-2">College of Administration and Economics</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white/5 p-8 rounded-[40px] border border-white/10 text-center">
+                <span class="block text-4xl font-black text-orange-500 mb-2">100%</span>
+                <span class="text-slate-300 font-bold uppercase tracking-widest text-xs" id="txt-stat">Customer Satisfaction</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-20 border-t border-gray-100 py-16 text-center">
+        <a href="https://my-land.github.io/lanlink/" target="_blank" class="group flex flex-col items-center gap-2">
+            <span class="text-[10px] font-black text-slate-300 uppercase tracking-[6px] group-hover:text-orange-500 transition-colors" id="txt-referral">DESIGNED BY LANLINK</span>
+            <span class="text-sm font-bold text-slate-400 group-hover:text-slate-900" id="txt-copy">Copyright © 2026 LANLINK</span>
+        </a>
+    </footer>
+
+    <script>
+        const EXPIRATION_DATE = new Date('2026-02-28T23:59:59');
+        const SUPPORT_WHATSAPP = "989358185552";
+
+        const TRANSLATIONS = {
+            ar: {
+                brand: "أم علي كيراتين", name: "أم علي كيراتين 🏹", expertise: "Hair Salon • اختصاص تسريح ومعالجة الشعر", badge: "عناية فائقة بالشعر",
+                wa: "احجز موعدك الآن", location: "المدينة الرياضية، البصرة", locationLabel: "الموقع",
+                services: "خدماتنا المميزة", portfolio: "نتائجنا المبهرة", portfolioDesc: "لمحة عن التغيير الجذري الذي نقوم به لعملائنا.",
+                eduLabel: "الملف الأكاديمي", eduTitle: "خلفية علمية تضمن الدقة والاحترافية", eduDesc: "إدارة العمل بمهنية عالية نابعة من خلفية أكاديمية في المحاسبة والإدارة من جامعة البصرة.",
+                svc1t: "تسريح الكيراتين", svc1d: "معالجة الشعر الخشن والمجعد بأفضل أنواع الكيراتين العالمية لنتائج تدوم طويلاً.",
+                svc2t: "بوتوكس الشعر", svc2d: "ترميم الشعر التالف والمتقصف وإعادة الحيوية واللمعان الفوري لخصلات شعرك.",
+                svc3t: "بروتين النانو", svc3d: "تقنية النانو الحديثة لتغذية الشعر من الجذور وحتى الأطراف بأمان تام.",
+                stat: "رضا الزبائن", referral: "تصميم وإدارة LanLink", copy: "جميع الحقوق محفوظة © 2026 LanLink", dir: "rtl"
+            },
+            ku: {
+                brand: "ئوم عەلی کیراتین", name: "ئوم عەلی کیراتین 🏹", expertise: "Hair Salon • تایبەتمەند لە خاوکردنەوە و چارەسەرکردنی قژ", badge: "چاودێری نایابی قژ",
+                wa: "ئێستا کاتەکەت بگرە", location: "شارە وەرزشییەکە، بەسرە", locationLabel: "شوێن",
+                services: "خزمەتگوزارییە نایابەکانمان", portfolio: "ئەنجامە سەرسوڕهێنەرەکانمان", portfolioDesc: "بینینی ئەو گۆڕانکارییانەی بۆ کڕیارەکانمان ئەنجاممان داوە.",
+                eduLabel: "پڕۆفایلی ئەکادیمی", eduTitle: "باکگراوندێکی زانستی کە وردی و پرۆفیشناڵبوون مسۆگەر دەکات", eduDesc: "بەڕێوەبردنی کار بە پرۆفیشناڵییەکی بەرزەوە کە لە باکگراوندێکی ئەکادیمی لە ژمێریاری لە زانکۆی بەسرە سەرچاوەی گرتووە.",
+                svc1t: "خاوکردنەوەی کیراتین", svc1d: "چارەسەرکردنی قژی زبر و لول بە باشترین جۆرەکانی کیراتینی جیهانی بۆ ئەنجامێکی درێژخایەن.",
+                svc2t: "بۆتۆکسی قژ", svc2d: "چاککردنەوەی قژی تێکچوو و بێهێز و گەڕاندنەوەی بریقە و جوانییەکی دەستبەجێ بۆ تاڵەکانی قژت.",
+                svc3t: "پرۆتینی نانۆ", svc3d: "تەکنەلۆژیای نانۆی مۆدێرن بۆ تێرکردنی قژ لە ڕەگەوە تا کۆتایی بە سەلامەتی تەواو.",
+                stat: "ڕەزامەندی کڕیاران", referral: "دیزاین و بەڕێوەبردن لەلایەن LanLink", copy: "هەموو مافەکان پارێزراوە © ٢٠٢٦ LanLink", dir: "rtl"
+            },
+            en: {
+                brand: "Um Ali Keratin", name: "Um Ali Keratin 🏹", expertise: "Hair Salon • Hair Treatment Specialist", badge: "Premium Hair Care",
+                wa: "Book Appointment", location: "Sports City, Basra", locationLabel: "Location",
+                services: "Our Services", portfolio: "Our Results", portfolioDesc: "A glimpse of the radical transformation we provide.",
+                eduLabel: "Academic Profile", eduTitle: "Academic Background & Professionalism", eduDesc: "Managing with high professionalism stemming from an academic background in Accounting from University of Basrah.",
+                svc1t: "Keratin Straightening", svc1d: "Treating coarse and curly hair with the best global keratin types for long-lasting results.",
+                svc2t: "Hair Botox", svc2d: "Restoring damaged and brittle hair and returning immediate vitality and shine to your hair strands.",
+                svc3t: "Nano Protein", svc3d: "Modern nano technology to nourish hair from roots to ends with complete safety.",
+                stat: "Customer Satisfaction", referral: "Designed by LanLink", copy: "Copyright © 2026 LanLink", dir: "ltr"
+            }
+        };
+
+        function checkSubscription() {
+            if (new Date() > EXPIRATION_DATE) {
+                document.getElementById('main-content').classList.add('hidden');
+                document.getElementById('expiration-overlay').classList.remove('hidden');
+                document.getElementById('whatsapp-renewal-link').href = `https://wa.me/${SUPPORT_WHATSAPP}`;
+                return true;
+            }
+            return false;
+        }
+
+        function setLanguage(lang) {
+            const t = TRANSLATIONS[lang === 'ku' ? 'ku' : lang];
+            document.documentElement.dir = t.dir;
+            document.documentElement.lang = lang === 'ku' ? 'ku' : lang;
+
+            document.getElementById('nav-brand').innerText = t.brand;
+            document.getElementById('txt-name').innerText = t.name;
+            document.getElementById('txt-expertise').innerText = t.expertise;
+            document.getElementById('txt-badge').innerText = t.badge;
+            document.getElementById('btn-wa').innerText = t.wa;
+            document.getElementById('txt-location-label').innerText = t.locationLabel;
+            document.getElementById('txt-location').innerText = t.location;
+            document.getElementById('txt-services-title').innerText = t.services;
+            document.getElementById('txt-portfolio-title').innerText = t.portfolio;
+            document.getElementById('txt-portfolio-desc').innerText = t.portfolioDesc;
+            document.getElementById('txt-edu-label').innerText = t.eduLabel;
+            document.getElementById('txt-edu-title').innerText = t.eduTitle;
+            document.getElementById('txt-edu-desc').innerText = t.eduDesc;
+            
+            document.getElementById('svc-1-t').innerText = t.svc1t;
+            document.getElementById('svc-1-d').innerText = t.svc1d;
+            document.getElementById('svc-2-t').innerText = t.svc2t;
+            document.getElementById('svc-2-d').innerText = t.svc2d;
+            document.getElementById('svc-3-t').innerText = t.svc3t;
+            document.getElementById('svc-3-d').innerText = t.svc3d;
+            
+            document.getElementById('txt-stat').innerText = t.stat;
+            document.getElementById('txt-referral').innerText = t.referral;
+            document.getElementById('txt-copy').innerText = t.copy;
+
+            const codes = ['ar', 'ku', 'en'];
+            codes.forEach(l => {
+                const btn = document.getElementById(`btn-${l}`);
+                if (l === lang) {
+                    btn.className = "px-4 py-1.5 rounded-full text-xs font-bold transition-all bg-black text-white shadow-md";
+                } else {
+                    btn.className = "px-4 py-1.5 rounded-full text-xs font-bold transition-all text-gray-500 hover:bg-gray-200";
+                }
+            });
+
+            lucide.createIcons();
+        }
+
+        if (!checkSubscription()) {
+            setLanguage('ar');
+        } else {
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>
